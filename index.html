@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Oshayer Siddique — Personal Website</title>
+  <meta name="description" content="Oshayer Siddique — Computer Science student. Projects, blog, and contact." />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#60a5fa; --glass: rgba(255,255,255,0.04);
+      --maxw:1100px; --radius:12px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg, #071028 0%, #081022 60%); color:#e6eef8; -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale; line-height:1.5;
+      padding:32px 16px;
+      display:flex; justify-content:center;
+    }
+    .wrap{width:100%; max-width:var(--maxw)}
+
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#2563eb);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+    nav a:hover{color:var(--accent)}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:28px}
+    @media (max-width:900px){ .hero{grid-template-columns:1fr} .hero-right{order:-1} }
+
+    .card{background:linear-gradient(180deg,var(--card), rgba(9,14,22,0.6)); padding:22px; border-radius:var(--radius); box-shadow:0 6px 30px rgba(2,6,23,0.6);}
+
+    h1{margin:0;font-size:28px}
+    .lead{color:var(--muted);margin-top:8px}
+
+    .hero-right{display:flex;flex-direction:column;gap:12px}
+    .profile-pic{width:100%;border-radius:10px;overflow:hidden;background:linear-gradient(135deg,#0ea5e9,#7c3aed);height:260px;display:flex;align-items:center;justify-content:center;font-size:38px;font-weight:700}
+
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+    @media (max-width:900px){ .grid{grid-template-columns:1fr} }
+
+    .projects ul{list-style:none;padding:0;margin:0}
+    .projects li{padding:12px;border-radius:10px;background:var(--glass);margin-bottom:10px}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--muted);font-size:13px}
+
+    footer{margin-top:28px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px}
+
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#2563eb);color:#021029;text-decoration:none;font-weight:600}
+
+    /* simple contact form */
+    form{display:grid;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:inherit}
+    input::placeholder,textarea::placeholder{color:var(--muted)}
+
+    small.note{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="brand">
+        <div class="logo">OS</div>
+        <div>
+          <div style="font-weight:700">Oshayer Siddique</div>
+          <div style="font-size:13px;color:var(--muted)">3rd year — Computer Science • LLM & ML enthusiast</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="https://github.com/Oshayer-Siddique" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h1>Hi — I'm <span style="color:var(--accent)">Oshayer</span>.</h1>
+        <p class="lead">I build things with code, study machine learning, and make educational content about probability, statistics, and reasoning.</p>
+
+        <div class="grid" style="margin-top:18px">
+          <div class="card" style="background:transparent;padding:14px">
+            <h3 style="margin-top:0;margin-bottom:8px">Skills</h3>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <span class="tag">Python</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Flutter</span>
+              <span class="tag">DevOps</span>
+            </div>
+          </div>
+
+          <div class="card" style="background:transparent;padding:14px">
+            <h3 style="margin-top:0;margin-bottom:8px">Stats</h3>
+            <div style="display:flex;gap:12px;align-items:center">
+              <div>
+                <div style="font-weight:700;font-size:18px">20k+</div>
+                <div style="color:var(--muted);font-size:13px">Physics Qs in dataset</div>
+              </div>
+              <div>
+                <div style="font-weight:700;font-size:18px">6</div>
+                <div style="color:var(--muted);font-size:13px">Team members</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="hero-right">
+        <div class="card profile-pic">O S</div>
+        <div class="card">
+          <h4 style="margin:0 0 8px 0">Quick Links</h4>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <a href="#projects" style="text-decoration:none;color:var(--accent)">Recent projects →</a>
+            <a href="/resume.pdf" style="text-decoration:none;color:var(--muted)">Resume (PDF)</a>
+            <a href="mailto:oshayer@example.com" style="text-decoration:none;color:var(--muted)">Email me</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="card" style="margin-bottom:18px">
+      <h2 style="margin-top:0">About</h2>
+      <p class="lead">I'm a 3rd-year Computer Science student interested in LLM reasoning research, machine learning, and building useful developer tools. I enjoy making long-form content about cognitive biases, probability, and statistics.</p>
+    </section>
+
+    <section id="projects" class="card projects">
+      <h2 style="margin-top:0">Projects</h2>
+      <ul>
+        <li>
+          <strong>Physics Q/A Dataset</strong> — 20,000 solved physics questions with step-by-step solutions. <br/><small class="note">Technologies: Python, data-cleaning, LaTeX generation</small>
+        </li>
+        <li>
+          <strong>Task Manager App</strong> — Full-stack app with auth, tasks, filters (Node.js, React, MongoDB). <br/><small class="note">Features: JWT auth, email verification</small>
+        </li>
+        <li>
+          <strong>Parallax Flutter App</strong> — Mobile UI experiments and parallax effects. <br/><small class="note">Technologies: Flutter, Dart</small>
+        </li>
+      </ul>
+
+      <p style="margin-top:12px"><a href="https://github.com/Oshayer-Siddique" target="_blank" rel="noopener" class="btn">See more on GitHub</a></p>
+    </section>
+
+    <section id="contact" class="card" style="margin-top:18px">
+      <h2 style="margin-top:0">Contact</h2>
+      <p class="lead">Want to collaborate or have a question? Send a short message.</p>
+      <form onsubmit="event.preventDefault(); alert('Thanks — replace this with a real endpoint or a mailto link.');">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+        <textarea name="message" rows="5" placeholder="Message" required></textarea>
+        <div style="display:flex;gap:10px;align-items:center">
+          <button class="btn" type="submit">Send message</button>
+          <small style="color:var(--muted)">Or email: <a href="mailto:oshayer@example.com" style="color:var(--muted)">oshayer@example.com</a></small>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      <div>© <strong>Oshayer Siddique</strong> — oshayer.com</div>
+      <div style="display:flex;gap:12px">
+        <a href="https://linkedin.com" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none">LinkedIn</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none">Twitter</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // small nicety: smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault(); const id=a.getAttribute('href').slice(1);
+        if(!id) return; document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'});
+      })
+    })
+  </script>
+</body>
+</html>
