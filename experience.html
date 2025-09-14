@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Oshayer Siddique</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        header {
+            background-color: #ffffff;
+            border-bottom: 2px solid #e5e5e5;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav li {
+            margin-left: 40px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding-bottom: 5px;
+        }
+
+        .nav a:hover {
+            color: #2c3e50;
+        }
+
+        .nav a.active {
+            font-weight: bold;
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .experience-item {
+            margin-bottom: 50px;
+            border-left: 3px solid #2c3e50;
+            padding-left: 30px;
+        }
+
+        .experience-header {
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .company {
+            font-size: 18px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .duration {
+            color: #888;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .job-description {
+            margin-top: 15px;
+            line-height: 1.7;
+        }
+
+        .job-description ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .job-description li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+
+            .header-container,
+            .container {
+                padding: 0 20px;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Oshayer Siddique</a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="experience.html" class="active">Experience</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="experience">
+            <div class="container">
+                <h2>Professional Experience</h2>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Co-Founder & Chief Operating Officer</div>
+                        <div class="company">Astareo Ltd.</div>
+                        <div class="duration">2025 - Present</div>
+                    </div>
+                    <div class="job-description">
+                        <p>Currently serving as the Chief Operating Officer (COO) at <a href="https://astareo.com/"
+                                target="_blank">Astareo Ltd.</a>, a service-based technology company delivering custom
+                            software solutions for diverse clients.</p>
+                        <ul>
+                            <li>Oversee company-wide operations, ensuring strategic growth and operational efficiency
+                            </li>
+                            <li>Lead the development and delivery of custom software solutions tailored to client needs
+                            </li>
+                            <li>Manage key accounts with major clients including the National Citizen Party (NCP) and
+                                Agroshift, the largest agro-farm and supply chain company in Bangladesh</li>
+                            <li>Direct ongoing strategic projects with Ontik Technology and the Bangladesh Air Force
+                            </li>
+                            <li>Drive innovation and process optimization to enhance service quality and client
+                                satisfaction</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Junior Research Fellow</div>
+                        <div class="company">Systems and Software Lab Islamic University of Technology</div>
+                        <div class="duration">2024 - present</div>
+                    </div>
+                    <div class="job-description">
+                        <p>Conducting independent research in Natural Language Processing and Large Language Models
+                            (LLMs), with a focus on their core components and reasoning capabilities.</p>
+                        <ul>
+                            <li>Published a research paper on ACL findings — <a
+                                    href="https://www.researchgate.net/profile/Oshayer-Siddique?ev=hdr_xprf"
+                                    target="_blank">View on ResearchGate</a></li>
+                            <li>Currently researching the fundamental components of LLMs that contribute to their
+                                reasoning abilities</li>
+                            <li>Collaborating with interdisciplinary researchers to explore advancements in deep
+                                learning architectures</li>
+                            <li>Continuously building expertise in NLP, deep learning, and AI-driven reasoning systems
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Associate Software Engineer</div>
+                        <div class="company">CTrends Software & Services Ltd.</div>
+                        <div class="duration">2025 - present</div>
+                    </div>
+                    <div class="job-description">
+                        <p>Associate Software Engineer at <a href="https://www.ctrends-software.com/"
+                                target="_blank">Ctrends Software Ltd.</a>, specializing in backend development and
+                            DevOps for enterprise business software (EBS).</p>
+                        <ul>
+                            <li>Engineered and maintained scalable backend systems for Ctrends’ EBS platform</li>
+                            <li>Designed and automated CI/CD pipelines, improving deployment efficiency and reliability
+                            </li>
+                            <li>Optimized system performance, security, and availability through robust DevOps practices
+                            </li>
+                            <li>Collaborated with cross-functional teams to deliver new features and system enhancements
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Software Intern</div>
+                        <div class="company">Ajke Ltd.</div>
+                        <div class="duration">2023 - 2024</div>
+                    </div>
+                    <div class="job-description">
+                        <p>Software Intern at <a href="https://ajke.app/"
+                                target="_blank">Ajke App.</a>, specializing in backend development.</p>
+                        <ul>
+                            <li>Contributed to the development of RESTful APIs and microservices</li>
+
+                  
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Oshayer Siddique. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

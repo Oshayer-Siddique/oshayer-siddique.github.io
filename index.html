@@ -3,12 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Oshayer Siddique - Entrepreneur & Researcher</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Times New Roman', serif; line-height: 1.6; color: #333; background-color: #ffffff; }
+        /* This new class will be toggled by JavaScript to prevent scrolling */
+        body.menu-open { overflow: hidden; }
+
+        header { background-color: #ffffff; border-bottom: 2px solid #e5e5e5; position: fixed; width: 100%; top: 0; z-index: 100; }
+        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; height: 80px; }
+        .logo { font-size: 24px; font-weight: bold; color: #2c3e50; text-decoration: none; letter-spacing: 1px; }
+        
+        /* Desktop Navigation */
+        .desktop-nav { display: flex; list-style: none; }
+        .desktop-nav li { margin-left: 40px; }
+        .desktop-nav a { text-decoration: none; color: #333; font-size: 16px; font-weight: 500; transition: color 0.3s ease; padding-bottom: 5px; }
+        .desktop-nav a:hover { color: #2c3e50; }
+        .desktop-nav a.active { font-weight: bold; color: #2c3e50; border-bottom: 2px solid #2c3e50; }
+
+        /* Mobile Menu Styles (moved outside media query) */
+        .nav-menu {
+            display: none; /* Hidden by default on all screen sizes */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(5px);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            /* **THE FIX**: Added z-index to ensure menu appears over the header */
+            z-index: 105; 
+        }
+        .nav-menu.active {
+            display: flex; /* Show when active */
+        }
+        .nav-menu li {
+            margin: 25px 0;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        main { margin-top: 80px; height: auto; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+        .hero { padding: 120px 0; text-align: center; background-color: #ffffff; }
+        .hero h1 { font-size: 48px; color: #2c3e50; margin-bottom: 20px; font-weight: normal; }
+        .hero .subtitle { font-size: 24px; color: #666; margin-bottom: 40px; font-style: italic; }
+        .hero p { font-size: 18px; color: #555; max-width: 700px; margin: 0 auto 50px; line-height: 1.8; }
+        .contact-btn { display: inline-block; padding: 15px 40px; background-color: #2c3e50; color: white; text-decoration: none; font-size: 16px; border-radius: 3px; transition: background-color 0.3s ease; }
+        .contact-btn:hover { background-color: #34495e; }
+        footer { background-color: #2c3e50; color: white; text-align: center; padding: 40px 0; }
+
+        /* Mobile Menu Toggle (Hamburger) */
+        .mobile-menu-toggle {
+            display: none; /* Hidden on desktop */
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 110; /* Higher than menu to stay on top */
+        }
+        .mobile-menu-toggle span {
+            width: 30px;
+            height: 3px;
+            background-color: #2c3e50;
+            border-radius: 10px;
+            transition: all 0.3s linear;
+        }
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container, .container { padding: 0 20px; }
+            .hero h1 { font-size: 36px; }
+            .hero .subtitle { font-size: 20px; }
+            
+            /* Hide Desktop Nav and Show Mobile Toggle */
+            .desktop-nav {
+                display: none;
+            }
+            .mobile-menu-toggle {
+                display: flex;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Oshayer Siddique</a>
+            
+            <nav>
+                <ul class="desktop-nav">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
 
-<H1>
-    Hello OSHAYER SIDDIQUE
-</H1>    
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <button class="mobile-menu-toggle" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Oshayer Siddique</h1>
+                <p class="subtitle">Entrepreneur & Researcher</p>
+                <p>Dedicated to advancing knowledge through rigorous research while translating insights into practical business solutions. With extensive experience in both academic and entrepreneurial environments, I bridge the gap between theory and application to drive meaningful innovation.</p>
+                <a href="contact.html" class="contact-btn">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Oshayer Siddique. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Mobile Menu Functionality
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const body = document.querySelector('body');
+
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            body.classList.toggle('menu-open'); // Toggles scroll lock
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (navMenu.classList.contains('active')) {
+                    menuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    body.classList.remove('menu-open'); // Removes scroll lock
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oshayer Siddique - Entrepreneur & Researcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        /* Header */
+        header {
+            background-color: #ffffff;
+            border-bottom: 2px solid #e5e5e5;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav li {
+            margin-left: 40px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #2c3e50;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 85px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .hero .subtitle {
+            font-size: 24px;
+            color: #666;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            line-height: 1.8;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #2c3e50;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: #34495e;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-alt {
+            background-color: #f8f9fa;
+        }
+
+        h2 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .profile-info {
+            background-color: #ffffff;
+            padding: 40px;
+            border: 1px solid #e5e5e5;
+            border-radius: 5px;
+        }
+
+        .profile-info h3 {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+            display: flex;
+        }
+
+        .info-label {
+            font-weight: bold;
+            width: 120px;
+            color: #2c3e50;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+            font-size: 16px;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 50px;
+            border-left: 3px solid #2c3e50;
+            padding-left: 30px;
+        }
+
+        .experience-header {
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .company {
+            font-size: 18px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .duration {
+            color: #888;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .job-description {
+            margin-top: 15px;
+            line-height: 1.7;
+        }
+
+        .job-description ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .job-description li {
+            margin-bottom: 8px;
+        }
+
+        /* Research Section */
+        .research-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .research-area {
+            background-color: #ffffff;
+            padding: 30px;
+            border: 1px solid #e5e5e5;
+            border-radius: 5px;
+        }
+
+        .research-area h4 {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* Publications */
+        .publication {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .publication:last-child {
+            border-bottom: none;
+        }
+
+        .publication-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .publication-details {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .publication-abstract {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-method {
+            text-align: center;
+            padding: 30px;
+            background-color: #ffffff;
+            border: 1px solid #e5e5e5;
+            border-radius: 5px;
+        }
+
+        .contact-method h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .contact-method a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .contact-method a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 20px;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
+            .nav {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero .subtitle {
+                font-size: 20px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#home" class="logo">Oshayer Siddique</a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Oshayer Siddique</h1>
+                <p class="subtitle">Entrepreneur & Researcher</p>
+                <p>Dedicated to advancing knowledge through rigorous research while translating insights into practical business solutions. With extensive experience in both academic and entrepreneurial environments, I bridge the gap between theory and application to drive meaningful innovation.</p>
+                <a href="#contact" class="contact-btn">Get in Touch</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-alt">
+            <div class="container">
+                <h2>About</h2>
+                <div class="about-content">
+                    <div class="profile-info">
+                        <h3>Professional Profile</h3>
+                        <div class="info-item">
+                            <span class="info-label">Location:</span>
+                            <span>Gazipur, Bangladesh</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Specialization:</span>
+                            <span>Entrepreneurship & Research</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Experience:</span>
+                            <span>15+ Years</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Education:</span>
+                            <span>Advanced Degrees</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Languages:</span>
+                            <span>Bengali, English</span>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <p>Throughout my career, I have maintained a dual focus on rigorous academic research and practical business application. My approach combines systematic investigation with entrepreneurial vision, enabling me to identify opportunities that others might overlook and develop solutions that address real-world challenges.</p>
+                        
+                        <p>As a researcher, I have contributed to various fields through peer-reviewed publications, conference presentations, and collaborative projects. My research methodology emphasizes empirical evidence, statistical analysis, and reproducible results. I believe that quality research must be both methodologically sound and practically relevant.</p>
+                        
+                        <p>In my entrepreneurial capacity, I have founded and advised multiple ventures, focusing on technology-driven solutions that create sustainable value. My business philosophy centers on evidence-based decision making, strategic planning, and long-term growth rather than short-term gains.</p>
+                        
+                        <p>I am particularly interested in the intersection of research and business, where academic insights can be transformed into market solutions. This perspective has allowed me to contribute meaningfully to both academic discourse and commercial innovation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="container">
+                <h2>Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Founder & Managing Director</div>
+                        <div class="company">Innovation Ventures Ltd.</div>
+                        <div class="duration">2018 - Present</div>
+                    </div>
+                    <div class="job-description">
+                        <p>Leading a technology-focused venture capital and consulting firm that specializes in early-stage investments and business development.</p>
+                        <ul>
+                            <li>Established investment criteria and due diligence processes resulting in 15+ successful portfolio companies</li>
+                            <li>Developed comprehensive business development programs for emerging entrepreneurs</li>
+                            <li>Created strategic partnerships with academic institutions and industry leaders</li>
+                            <li>Managed portfolio worth $5M+ with consistent year-over-year growth</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Senior Research Fellow</div>
+                        <div class="company">Institute for Advanced Studies</div>
+                        <div class="duration">2015 - 2020</div>
+                    </div>
+                    <div class="job-description">
+                        <p>Conducted independent research projects while mentoring junior researchers and collaborating on interdisciplinary studies.</p>
+                        <ul>
+                            <li>Published 12 peer-reviewed articles in high-impact journals</li>
+                            <li>Secured research funding totaling $2.3M from government and private sources</li>
+                            <li>Supervised 8 PhD candidates and 15 Master's students</li>
+                            <li>Presented findings at 25+ international conferences</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">Business Development Manager</div>
+                        <div class="company">TechSolutions Bangladesh</div>
+                        <div class="duration">2012 - 2015</div>
+                    </div>
+                    <div class="job-description">
+                        <p>Responsible for identifying new market opportunities and developing strategic business relationships.</p>
+                        <ul>
+                            <li>Increased annual revenue by 180% through strategic partnerships and market expansion</li>
+                            <li>Launched 5 new product lines based on market research and customer feedback</li>
+                            <li>Established presence in 3 new international markets</li>
+                            <li>Built and managed a team of 12 business development professionals</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="section-alt">
+            <div class="container">
+                <h2>Research Areas</h2>
+                <div class="research-areas">
+                    <div class="research-area">
+                        <h4>Technology Adoption in Emerging Markets</h4>
+                        <p>Investigating how developing economies integrate new technologies and the factors that influence adoption rates. Focus on mobile technology, fintech, and digital infrastructure development.</p>
+                    </div>
+                    <div class="research-area">
+                        <h4>Entrepreneurial Ecosystem Development</h4>
+                        <p>Studying the conditions that foster successful entrepreneurship, including access to capital, regulatory environments, and cultural factors that influence startup success rates.</p>
+                    </div>
+                    <div class="research-area">
+                        <h4>Innovation Management</h4>
+                        <p>Research on organizational structures and processes that facilitate innovation, with particular attention to knowledge transfer between academic and commercial sectors.</p>
+                    </div>
+                    <div class="research-area">
+                        <h4>Sustainable Business Models</h4>
+                        <p>Examining business models that balance profitability with environmental and social responsibility, focusing on long-term value creation and stakeholder engagement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications">
+            <div class="container">
+                <h2>Selected Publications</h2>
+                
+                <div class="publication">
+                    <div class="publication-title">"Digital Transformation in South Asian SMEs: A Longitudinal Study"</div>
+                    <div class="publication-details">Journal of Business Research, Vol. 45, No. 3, 2023</div>
+                    <div class="publication-abstract">This comprehensive study examines the digital transformation journey of 150 small and medium enterprises across South Asia over a five-year period, identifying key success factors and common barriers to digital adoption.</div>
+                </div>
+                
+                <div class="publication">
+                    <div class="publication-title">"Entrepreneurial Networks and Innovation Capacity in Emerging Markets"</div>
+                    <div class="publication-details">International Entrepreneurship Review, Vol. 28, No. 2, 2022</div>
+                    <div class="publication-abstract">An empirical analysis of how entrepreneurial networks contribute to innovation capacity in emerging markets, based on data from 12 countries and 300 startups.</div>
+                </div>
+                
+                <div class="publication">
+                    <div class="publication-title">"Sustainable Venture Capital: Impact Measurement and Long-term Value Creation"</div>
+                    <div class="publication-details">Academy of Management Perspectives, Vol. 36, No. 1, 2022</div>
+                    <div class="publication-abstract">A framework for evaluating the long-term impact of venture capital investments that prioritize environmental and social outcomes alongside financial returns.</div>
+                </div>
+                
+                <div class="publication">
+                    <div class="publication-title">"Technology Transfer Mechanisms in University-Industry Partnerships"</div>
+                    <div class="publication-details">Research Policy, Vol. 51, No. 4, 2021</div>
+                    <div class="publication-abstract">Analysis of 25 successful university-industry partnerships to identify effective mechanisms for technology transfer and commercialization of academic research.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-alt">
+            <div class="container">
+                <h2>Contact Information</h2>
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <h4>Email</h4>
+                        <p><a href="mailto:oshayer.siddique@email.com">oshayer.siddique@email.com</a></p>
+                    </div>
+                    <div class="contact-method">
+                        <h4>Professional Network</h4>
+                        <p><a href="#">LinkedIn Profile</a></p>
+                    </div>
+                    <div class="contact-method">
+                        <h4>Research Profile</h4>
+                        <p><a href="#">Google Scholar</a></p>
+                    </div>
+                    <div class="contact-method">
+                        <h4>Office</h4>
+                        <p>Gazipur, Dhaka Division<br>Bangladesh</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Oshayer Siddique. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideMenu = mobileMenu.contains(event.target);
+            const isClickOnButton = mobileMenuBtn.contains(event.target);
+            
+            if (!isClickInsideMenu && !isClickOnButton && mobileMenu.classList.contains('active')) {
+                mobileMenuBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                const headerOffset = 80;
+                const elementPosition = target.offsetTop;
+                const offsetPosition = elementPosition - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header background change on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = '#ffffff';
+                header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+            } else {
+                header.style.backgroundColor = '#ffffff';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
