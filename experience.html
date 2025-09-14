@@ -12,12 +12,16 @@
             box-sizing: border-box;
         }
 
+        html, body { height: 100%; }
         body {
             font-family: 'Times New Roman', serif;
             line-height: 1.6;
             color: #333;
             background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
         }
+        body.menu-open { overflow: hidden; }
 
         header {
             background-color: #ffffff;
@@ -46,16 +50,17 @@
             letter-spacing: 1px;
         }
 
-        .nav {
+        /* Desktop Navigation */
+        .desktop-nav {
             display: flex;
             list-style: none;
         }
 
-        .nav li {
+        .desktop-nav li {
             margin-left: 40px;
         }
 
-        .nav a {
+        .desktop-nav a {
             text-decoration: none;
             color: #333;
             font-size: 16px;
@@ -64,18 +69,78 @@
             padding-bottom: 5px;
         }
 
-        .nav a:hover {
+        .desktop-nav a:hover {
             color: #2c3e50;
         }
 
-        .nav a.active {
+        .desktop-nav a.active {
             font-weight: bold;
             color: #2c3e50;
             border-bottom: 2px solid #2c3e50;
         }
 
+        /* Mobile Menu Styles */
+        .nav-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(5px);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            z-index: 105;
+        }
+        .nav-menu.active {
+            display: flex;
+        }
+        .nav-menu li {
+            margin: 25px 0;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 110;
+        }
+        .mobile-menu-toggle span {
+            width: 30px;
+            height: 3px;
+            background-color: #2c3e50;
+            border-radius: 10px;
+            transition: all 0.3s linear;
+        }
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
         main {
             margin-top: 80px;
+            flex: 1;
         }
 
         .container {
@@ -100,6 +165,11 @@
             margin-bottom: 50px;
             border-left: 3px solid #2c3e50;
             padding-left: 30px;
+            background-color: #fafbfc;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #3498db;
         }
 
         .experience-header {
@@ -110,6 +180,7 @@
             font-size: 20px;
             font-weight: bold;
             color: #2c3e50;
+            margin-bottom: 5px;
         }
 
         .company {
@@ -118,15 +189,40 @@
             margin-top: 5px;
         }
 
+        .company a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .company a:hover {
+            text-decoration: underline;
+        }
+
         .duration {
             color: #888;
             font-style: italic;
             margin-top: 5px;
+            font-weight: 600;
         }
 
         .job-description {
             margin-top: 15px;
             line-height: 1.7;
+        }
+
+        .job-description p {
+            margin-bottom: 15px;
+        }
+
+        .job-description a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .job-description a:hover {
+            text-decoration: underline;
         }
 
         .job-description ul {
@@ -146,18 +242,73 @@
         }
 
         @media (max-width: 768px) {
-
             .header-container,
             .container {
                 padding: 0 20px;
             }
 
-            .nav {
+            section {
+                padding: 40px 0;
+            }
+
+            /* Hide Desktop Nav and Show Mobile Toggle */
+            .desktop-nav {
                 display: none;
+            }
+            .mobile-menu-toggle {
+                display: flex;
             }
 
             h2 {
                 font-size: 28px;
+                margin-bottom: 30px;
+            }
+
+            .experience-item {
+                padding: 20px;
+                margin-bottom: 30px;
+                border-left-width: 3px;
+            }
+
+            .job-title {
+                font-size: 18px;
+            }
+
+            .company {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0 15px;
+            }
+            .container {
+                padding: 0 15px;
+            }
+            .logo {
+                font-size: 20px;
+            }
+            
+            h2 {
+                font-size: 24px;
+            }
+
+            .experience-item {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+
+            .job-title {
+                font-size: 16px;
+            }
+
+            .company {
+                font-size: 15px;
+            }
+
+            section {
+                padding: 30px 0;
             }
         }
     </style>
@@ -167,16 +318,32 @@
     <header>
         <div class="header-container">
             <a href="index.html" class="logo">Oshayer Siddique</a>
+            
             <nav>
-                <ul class="nav">
+                <ul class="desktop-nav">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="experience.html" class="active">Experience</a></li>
                     <li><a href="research.html">Research</a></li>
-                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="skills-awards.html">Skills-Awards</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="skills-awards.html">Skills-Awards</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <button class="mobile-menu-toggle" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -187,90 +354,70 @@
                 <div class="experience-item">
                     <div class="experience-header">
                         <div class="job-title">Co-Founder & Chief Operating Officer</div>
-                        <div class="company">Astareo Ltd.</div>
+                        <div class="company"><a href="https://astareo.com/" target="_blank">Astareo Ltd.</a></div>
                         <div class="duration">2025 - Present</div>
                     </div>
                     <div class="job-description">
-                        <p>Currently serving as the Chief Operating Officer (COO) at <a href="https://astareo.com/"
-                                target="_blank">Astareo Ltd.</a>, a service-based technology company delivering custom
-                            software solutions for diverse clients.</p>
+                        <p>Currently serving as the Chief Operating Officer (COO) at Astareo Ltd., a service-based technology company delivering custom software solutions for diverse clients.</p>
                         <ul>
-                            <li>Oversee company-wide operations, ensuring strategic growth and operational efficiency
-                            </li>
-                            <li>Lead the development and delivery of custom software solutions tailored to client needs
-                            </li>
-                            <li>Manage key accounts with major clients including the National Citizen Party (NCP) and
-                                Agroshift, the largest agro-farm and supply chain company in Bangladesh</li>
-                            <li>Direct ongoing strategic projects with Ontik Technology and the Bangladesh Air Force
-                            </li>
-                            <li>Drive innovation and process optimization to enhance service quality and client
-                                satisfaction</li>
+                            <li>Oversee company-wide operations, ensuring strategic growth and operational efficiency</li>
+                            <li>Lead the development and delivery of custom software solutions tailored to client needs</li>
+                            <li>Manage key accounts with major clients including the National Citizen Party (NCP) and Agroshift, the largest agro-farm and supply chain company in Bangladesh</li>
+                            <li>Direct ongoing strategic projects with Ontik Technology and the Bangladesh Air Force</li>
+                            <li>Drive innovation and process optimization to enhance service quality and client satisfaction</li>
                         </ul>
                     </div>
-
                 </div>
+
                 <div class="experience-item">
                     <div class="experience-header">
                         <div class="job-title">Junior Research Fellow</div>
                         <div class="company">Systems and Software Lab Islamic University of Technology</div>
-                        <div class="duration">2024 - present</div>
+                        <div class="duration">2024 - Present</div>
                     </div>
                     <div class="job-description">
-                        <p>Conducting independent research in Natural Language Processing and Large Language Models
-                            (LLMs), with a focus on their core components and reasoning capabilities.</p>
+                        <p>Conducting independent research in Natural Language Processing and Large Language Models (LLMs), with a focus on their core components and reasoning capabilities.</p>
                         <ul>
-                            <li>Published a research paper on ACL findings — <a
-                                    href="https://www.researchgate.net/profile/Oshayer-Siddique?ev=hdr_xprf"
-                                    target="_blank">View on ResearchGate</a></li>
-                            <li>Currently researching the fundamental components of LLMs that contribute to their
-                                reasoning abilities</li>
-                            <li>Collaborating with interdisciplinary researchers to explore advancements in deep
-                                learning architectures</li>
-                            <li>Continuously building expertise in NLP, deep learning, and AI-driven reasoning systems
-                            </li>
+                            <li>Published a research paper on ACL findings — <a href="https://www.researchgate.net/profile/Oshayer-Siddique?ev=hdr_xprf" target="_blank">View on ResearchGate</a></li>
+                            <li>Currently researching the fundamental components of LLMs that contribute to their reasoning abilities</li>
+                            <li>Collaborating with interdisciplinary researchers to explore advancements in deep learning architectures</li>
+                            <li>Continuously building expertise in NLP, deep learning, and AI-driven reasoning systems</li>
                         </ul>
                     </div>
-
                 </div>
+
                 <div class="experience-item">
                     <div class="experience-header">
                         <div class="job-title">Associate Software Engineer</div>
-                        <div class="company">CTrends Software & Services Ltd.</div>
-                        <div class="duration">2025 - present</div>
+                        <div class="company"><a href="https://www.ctrends-software.com/" target="_blank">CTrends Software & Services Ltd.</a></div>
+                        <div class="duration">2025 - Present</div>
                     </div>
                     <div class="job-description">
-                        <p>Associate Software Engineer at <a href="https://www.ctrends-software.com/"
-                                target="_blank">Ctrends Software Ltd.</a>, specializing in backend development and
-                            DevOps for enterprise business software (EBS).</p>
+                        <p>Associate Software Engineer at Ctrends Software Ltd., specializing in backend development and DevOps for enterprise business software (EBS).</p>
                         <ul>
-                            <li>Engineered and maintained scalable backend systems for Ctrends’ EBS platform</li>
-                            <li>Designed and automated CI/CD pipelines, improving deployment efficiency and reliability
-                            </li>
-                            <li>Optimized system performance, security, and availability through robust DevOps practices
-                            </li>
-                            <li>Collaborated with cross-functional teams to deliver new features and system enhancements
-                            </li>
+                            <li>Engineered and maintained scalable backend systems for Ctrends' EBS platform</li>
+                            <li>Designed and automated CI/CD pipelines, improving deployment efficiency and reliability</li>
+                            <li>Optimized system performance, security, and availability through robust DevOps practices</li>
+                            <li>Collaborated with cross-functional teams to deliver new features and system enhancements</li>
                         </ul>
                     </div>
-
                 </div>
 
                 <div class="experience-item">
                     <div class="experience-header">
                         <div class="job-title">Software Intern</div>
-                        <div class="company">Ajke Ltd.</div>
+                        <div class="company"><a href="https://ajke.app/" target="_blank">Ajke Ltd.</a></div>
                         <div class="duration">2023 - 2024</div>
                     </div>
                     <div class="job-description">
-                        <p>Software Intern at <a href="https://ajke.app/"
-                                target="_blank">Ajke App.</a>, specializing in backend development.</p>
+                        <p>Software Intern at Ajke App, specializing in backend development.</p>
                         <ul>
                             <li>Contributed to the development of RESTful APIs and microservices</li>
-
-                  
+                            <li>Gained hands-on experience with modern backend technologies and frameworks</li>
+                            <li>Collaborated with senior developers to implement new features and optimize existing code</li>
+                            <li>Participated in code reviews and agile development processes</li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -283,6 +430,7 @@
     </footer>
 
     <script>
+        // Header background change on scroll
         window.addEventListener('scroll', function () {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
@@ -290,6 +438,28 @@
             } else {
                 header.style.boxShadow = 'none';
             }
+        });
+
+        // Mobile Menu Functionality
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const body = document.querySelector('body');
+
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (navMenu.classList.contains('active')) {
+                    menuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    body.classList.remove('menu-open');
+                }
+            });
         });
     </script>
 </body>
